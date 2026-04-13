@@ -109,7 +109,7 @@ tools/
   base.py     — Tool 基类与 TOOLS 注册表（exposed 字段区分用户/系统工具）
   fs/         — 文件系统工具（FileRead、FileWrite、FileEdit、Glob、Grep）
   shell/      — Bash
-  agent/      — LLM、Compress、SpawnAgent、SendMessage、ListAgents、Skill
+  core/       — LLM、Compress、SpawnAgent、SendMessage、ListAgents、Skill
 ```
 
 **依赖方向**：`agent.py → runtime.py ← tools/`，agent 与 tools 之间不直接依赖，通过 runtime 解耦。

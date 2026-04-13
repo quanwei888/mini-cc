@@ -3,4 +3,4 @@ from .base import Tool, TOOLS  # noqa: F401
 
 from .fs    import file_read, file_write, file_edit, glob, grep          # noqa: F401
 from .shell import bash                                                   # noqa: F401
-from .agent import llm, spawn_agent, send_message, skill, compress, list_agents  # noqa: F401
+from .core  import llm, spawn_agent, send_message, skill, compress, list_agents   # noqa: F401
