@@ -66,6 +66,9 @@ class Agent:
         skills = runtime.skills_section()
         skills_section = skills + "\n" if skills else ""
         self.system = _SYSTEM_PROMPT.format(name=self.name, skills_section=skills_section)
+        claude_md = runtime.claude_md()
+        if claude_md:
+            self.system += f"\n\n---\n\n{claude_md}"
 
     @classmethod
     def spawn(cls, name: str, prompt: str | None = None, auto_shutdown: bool = False) -> "Agent":

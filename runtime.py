@@ -1,4 +1,5 @@
 import threading
+from pathlib import Path
 
 # 线程局部变量：存储当前线程运行的 agent 名
 _current_agent = threading.local()
@@ -27,6 +28,12 @@ def get_tool(name: str):
 def get_tool_schemas() -> list:
     from tools import TOOLS
     return [t.schema() for t in TOOLS.values() if t.exposed]
+
+
+def claude_md() -> str:
+    """读取当前目录的 CLAUDE.md，不存在则返回空字符串。"""
+    p = Path.cwd() / "CLAUDE.md"
+    return p.read_text(encoding="utf-8") if p.exists() else ""
 
 
 def skills_section() -> str:
