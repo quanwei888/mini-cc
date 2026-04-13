@@ -31,7 +31,7 @@ def get_tool_schemas() -> list:
 
 def skills_section() -> str:
     """返回可注入 system prompt 的 skill 列表，无 skill 时返回空字符串。"""
-    from tools.agent.skill import list_skills_with_desc
+    from tools.core.skill import list_skills_with_desc
     skills = list_skills_with_desc()
     if not skills:
         return ""

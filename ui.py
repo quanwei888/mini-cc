@@ -128,7 +128,7 @@ def output(
 def banner() -> None:
     import os
     import shutil
-    from tools.agent.llm import MODEL
+    from tools.core.llm import MODEL
 
     cwd = os.getcwd()
     bot = "#fb923c"
